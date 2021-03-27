@@ -10,6 +10,7 @@ import AboutSection from './AboutSection'
 import ExperiencesSection from './ExperiencesSection'
 import ExtracurricularsSection from './ExtracurricularsSection'
 import AbilitiesSection from './AbilitiesSection'
+import ContactsSection from './ContactsSection'
 import SectionHeader from './TextStyles'
 import {data} from './data'
 import Grid from '@material-ui/core/Grid';
@@ -51,9 +52,12 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: theme.spacing(4),
         paddingRight: theme.spacing(4),
     },
+    contactsBackground: {
+        backgroundColor: Colors.primary
+    }
 }));
 
-var menuTitles = {'about': AboutSection, 'experiences': ExperiencesSection, 'extracurriculars': ExtracurricularsSection, 'abilities': AbilitiesSection, 'contact': AboutSection}
+var menuTitles = {'about': AboutSection, 'experiences': ExperiencesSection, 'extracurriculars': ExtracurricularsSection, 'abilities': AbilitiesSection, 'contacts': ContactsSection}
 
 export default function Main() {
     const classes = useStyles();
@@ -75,16 +79,42 @@ export default function Main() {
             </AppBar>
             <main className={classes.content}>
                 <div className={classes.appBarSpacer}/>
-                {Object.keys(data).map((title) => (
-                    <Grid container className={classes.container} justify="center" spacing={4}>
-                        <Grid item xs={12} md={7}>
-                            <SectionHeader>{title}</SectionHeader>
+                {Object.keys(data).map((title, index) => {
+                    if (index == 0) {
+                        return <Grid container justify="center" spacing={4}>
+                            <Grid item xs={11} md={7}>
+                                {menuTitles[title](data[title])}
+                            </Grid>
                         </Grid>
-                        <Grid item xs={12} md={7}>
-                            {menuTitles[title](data[title])}
+                    } else if (index == Object.keys(data).length - 1) {
+                        let triangleHeight = 6
+                        return <Grid container className={classes.contactsBackground} justify="center" spacing={0}>
+                            <Grid item xs={12}>
+                                <svg preserveAspectRatio="xMaxYMid" viewBox={`0 0 100 ${triangleHeight * 1.3}`}>
+                                    <path
+                                        fill={Colors.white}
+                                        d={`M 0 0 L 50 ${triangleHeight} L 100 0 L 0 0`}
+                                    />
+                                </svg>
+                            </Grid>
+                            <Grid item xs={12} md={7}>
+                                <SectionHeader invert={true}>{title}</SectionHeader>
+                            </Grid>
+                            <Grid item xs={12} md={7}>
+                                {menuTitles[title](data[title])}
+                            </Grid>
                         </Grid>
-                    </Grid>
-                ))}
+                    } else {
+                        return <Grid container justify="center" spacing={4}>
+                            <Grid item xs={12} md={7}>
+                                <SectionHeader>{title}</SectionHeader>
+                            </Grid>
+                            <Grid item xs={11} md={7}>
+                                {menuTitles[title](data[title])}
+                            </Grid>
+                        </Grid>
+                    }
+                })}
             </main>
         </div>
     );

@@ -189,9 +189,12 @@ export const data = {
             {'title': 'German', 'rating': 2}
         ]
     },
-    'contact': {
-        'email':'tykimseoul@gmail.com',
-        'github':'github.com/tykimseoul',
-        'linkedin':'ss'
+    'contacts': {
+        'message': 'Have a question or want to get in touch?',
+        'routes': {
+            'email': 'tykimseoul@gmail.com',
+            'github': 'github.com/tykimseoul',
+            'linkedin': 'ss'
+        }
     }
 }

@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    invertedSectionHeader: {
+        color: Colors.white
+    },
     sectionSubheader: {
         color: Colors.textPrimary,
         textTransform: 'capitalize',
@@ -55,7 +58,7 @@ export default function SectionHeader(props) {
     const classes = useStyles();
 
     return <React.Fragment>
-        <Typography className={classes.sectionHeader}>{props.children}</Typography>
+        <Typography className={props.invert ? `${classes.sectionHeader} ${classes.invertedSectionHeader}` : classes.sectionHeader}>{props.children}</Typography>
     </React.Fragment>
 }
 
