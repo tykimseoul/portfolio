@@ -80,7 +80,7 @@ export const data = {
         'certificates':[
             {
                 'title':'SW 중심대학 공동 오픈소스 해커톤 대회',
-                'date':{
+                'startDate':{
                     'year':2019,
                     'month':6
                 },
@@ -88,7 +88,7 @@ export const data = {
             },
             {
                 'title':'LINE Corp. Scholarship',
-                'date':{
+                'startDate':{
                     'year':2019,
                     'month':11
                 },
@@ -96,7 +96,7 @@ export const data = {
             },
             {
                 'title':'2019 Ningbo Open Source Space CN-KR Hackathon',
-                'date':{
+                'startDate':{
                     'year':2019,
                     'month':8
                 },
@@ -104,7 +104,7 @@ export const data = {
             },
             {
                 'title':'2019 E*5 KAIST',
-                'date':{
+                'startDate':{
                     'year':2019,
                     'month':12
                 },
@@ -112,7 +112,7 @@ export const data = {
             },
             {
                 'title':'Korean Patent Application',
-                'date':{
+                'startDate':{
                     'year':2018,
                     'month':2
                 },

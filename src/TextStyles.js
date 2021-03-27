@@ -21,12 +21,14 @@ const useStyles = makeStyles((theme) => ({
         textTransform: 'capitalize',
         fontFamily: 'Montserrat-Bold',
         fontSize: '1.1rem',
+        paddingTop: 16
     },
     contentTitle: {
         color: Colors.textPrimary,
         textTransform: 'none',
         fontFamily: 'Montserrat-Medium',
         fontSize: '1.1rem',
+        paddingBottom: 8
     },
     contentSubtitle: {
         color: Colors.textPrimary,
@@ -44,7 +46,8 @@ const useStyles = makeStyles((theme) => ({
     icon: {
         color: Colors.primary,
         marginRight: 8,
-        fontSize: 20
+        fontSize: 20,
+        marginBottom: 8
     }
 }))
 
@@ -83,19 +86,23 @@ export function ContentSubtitle(props) {
 export function DateRangeText(props) {
     const classes = useStyles();
 
-    let startDate = moment(props.startYear.toString() + props.startMonth.toString().padStart(2, 0), 'YYYYMM').format('MMM. YYYY')
-
-    if (props.endYear == -1) {
-        var endDate = 'Today'
+    let startDate = moment(props.start['year'].toString() + props.start['month'].toString().padStart(2, 0), 'YYYYMM').format('MMM. YYYY')
+    if (props.end === undefined) {
+        var range = startDate
     } else {
-        var endDate = moment(props.endYear.toString() + props.endMonth.toString().padStart(2, 0), 'YYYYMM').format('MMM. YYYY')
+        if (props.end['year'] === -1) {
+            var endDate = 'Today'
+        } else {
+            var endDate = moment(props.end['year'].toString() + props.end['month'].toString().padStart(2, 0), 'YYYYMM').format('MMM. YYYY')
+        }
+        var range = `${startDate} - ${endDate}`
     }
 
     return <React.Fragment>
         <div className={classes.row}>
             <EventOutlinedIcon className={classes.icon}/>
             <Typography className={classes.contentTitle}>
-                {startDate} - {endDate}
+                {range}
             </Typography>
         </div>
     </React.Fragment>

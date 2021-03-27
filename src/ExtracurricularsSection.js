@@ -1,9 +1,8 @@
 import React from "react";
 import Grid from '@material-ui/core/Grid';
 import {List, ListItem} from "@material-ui/core";
-import {ContentSubtitle, ContentTitle, DateRangeText, LocationText, SectionSubheader} from './TextStyles'
+import {ContentTitle, DateRangeText, SectionSubheader} from './TextStyles'
 import {makeStyles} from "@material-ui/core/styles";
-
 
 const useStyles = makeStyles((theme) => ({
     item: {
@@ -14,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-export default function ExperiencesSection(data) {
+export default function ExtracurricularsSection(data) {
     const classes = useStyles();
 
     return <React.Fragment>
@@ -28,7 +27,7 @@ export default function ExperiencesSection(data) {
                         {data[title].map((item) => (
                             <ListItem className={classes.item}>
                                 <Grid item container xs={12} spacing={4}>
-                                    <Grid item xs={5}>
+                                    <Grid item xs={6}>
                                         <Grid item xs={12}>
                                             <ContentTitle>
                                                 {item['title'].toString()}
@@ -37,20 +36,12 @@ export default function ExperiencesSection(data) {
                                         <Grid item xs={12}>
                                             <DateRangeText start={item['startDate']} end={item['endDate']}/>
                                         </Grid>
-                                        <Grid item xs={12}>
-                                            <LocationText location={item['location']}/>
-                                        </Grid>
                                     </Grid>
-                                    <Grid item xs={7}>
+                                    <Grid item xs={6}>
                                         <Grid item xs={12}>
                                             <ContentTitle>
                                                 {item['subtitle'].toString()}
                                             </ContentTitle>
-                                        </Grid>
-                                        <Grid item xs={12}>
-                                            <ContentSubtitle>
-                                                {item['description'].toString()}
-                                            </ContentSubtitle>
                                         </Grid>
                                     </Grid>
                                 </Grid>
@@ -58,6 +49,8 @@ export default function ExperiencesSection(data) {
                         ))}
                     </List>
                 </Grid>
+
+
             </Grid>
         ))}
     </React.Fragment>
