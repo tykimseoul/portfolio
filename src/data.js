@@ -162,32 +162,32 @@ export const data = {
         ]
     },
     'abilities': {
-        'skills': {
-            'Tensorflow':3,
-            'Android Development':4,
-            'Flutter':2,
-            'iOS Development':2,
-            'Docker':2,
-            'Data Science':3,
-            'UI/UX Design':3,
-            'React':2,
-        },
-        'languages (programming)':{
-            'python':4,
-            'java':4,
-            'kotlin':4,
-            'swift':3,
-            'javascript':2,
-            'c':2,
-            'c++':2,
-            'scala':3,
-        },
-        'languages (natural)':{
-            'korean':5,
-            'english':5,
-            'french':3,
-            'german':2
-        }
+        'skills': [
+            {'title': 'Tensorflow', 'rating': 3},
+            {'title': 'Android Development', 'rating': 4},
+            {'title': 'Flutter', 'rating': 2},
+            {'title': 'iOS Development', 'rating': 2},
+            {'title': 'Docker', 'rating': 2},
+            {'title': 'Data Science', 'rating': 3},
+            {'title': 'UI/UX Design', 'rating': 3},
+            {'title': 'React', 'rating': 2},
+        ],
+        'languages (programming)': [
+            {'title': 'Python', 'rating': 4},
+            {'title': 'Java', 'rating': 4},
+            {'title': 'Kotlin', 'rating': 4},
+            {'title': 'Swift', 'rating': 3},
+            {'title': 'Javascript', 'rating': 2},
+            {'title': 'C', 'rating': 2},
+            {'title': 'C++', 'rating': 2},
+            {'title': 'Scala', 'rating': 3},
+        ],
+        'languages (natural)': [
+            {'title': 'Korean', 'rating': 5},
+            {'title': 'English', 'rating': 5},
+            {'title': 'French', 'rating': 3},
+            {'title': 'German', 'rating': 2}
+        ]
     },
     'contact': {
         'email':'tykimseoul@gmail.com',

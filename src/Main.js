@@ -9,6 +9,7 @@ import MenuItem from './MenuItem'
 import AboutSection from './AboutSection'
 import ExperiencesSection from './ExperiencesSection'
 import ExtracurricularsSection from './ExtracurricularsSection'
+import AbilitiesSection from './AbilitiesSection'
 import SectionHeader from './TextStyles'
 import {data} from './data'
 import Grid from '@material-ui/core/Grid';
@@ -52,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-var menuTitles = {'about': AboutSection, 'experiences': ExperiencesSection, 'extracurriculars': ExtracurricularsSection, 'abilities': AboutSection, 'contact': AboutSection}
+var menuTitles = {'about': AboutSection, 'experiences': ExperiencesSection, 'extracurriculars': ExtracurricularsSection, 'abilities': AbilitiesSection, 'contact': AboutSection}
 
 export default function Main() {
     const classes = useStyles();
