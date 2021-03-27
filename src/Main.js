@@ -4,10 +4,13 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import Button from '@material-ui/core/Button';
 import {Colors} from './values/colors.js'
 import MenuItem from './MenuItem'
+import AboutSection from './AboutSection'
+import ExperiencesSection from './ExperiencesSection'
+import SectionHeader from './TextStyles'
+import {data} from './data'
+import Grid from '@material-ui/core/Grid';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -16,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
     toolbar: {
         paddingRight: 36,
-        paddingLeft:36
+        paddingLeft: 36
     },
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
@@ -24,14 +27,14 @@ const useStyles = makeStyles((theme) => ({
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),
-        backgroundColor:Colors.white
+        backgroundColor: Colors.white
     },
     title: {
         flexGrow: 1,
-        color:Colors.textPrimary,
-        textTransform:'uppercase',
-        fontFamily:'Montserrat-Bold',
-        fontSize:'1.1rem'
+        color: Colors.textPrimary,
+        textTransform: 'uppercase',
+        fontFamily: 'Montserrat-Bold',
+        fontSize: '1.1rem'
     },
     appBarSpacer: theme.mixins.toolbar,
     content: {
@@ -43,10 +46,12 @@ const useStyles = makeStyles((theme) => ({
     container: {
         paddingTop: theme.spacing(4),
         paddingBottom: theme.spacing(4),
+        paddingLeft: theme.spacing(4),
+        paddingRight: theme.spacing(4),
     },
 }));
 
-var menuTitles = ['about', 'experiences', 'extracurriculars', 'abilities', 'contact']
+var menuTitles = {'about': AboutSection, 'experiences': ExperiencesSection, 'extracurriculars': AboutSection, 'abilities': AboutSection, 'contact': AboutSection}
 
 export default function Main() {
     const classes = useStyles();
@@ -59,8 +64,8 @@ export default function Main() {
                     <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
                         Taeyoon Kim
                     </Typography>
-                    {menuTitles.map((title) => (
-                        <MenuItem>
+                    {Object.keys(data).map((title) => (
+                        <MenuItem key={title}>
                             {title}
                         </MenuItem>
                     ))}
@@ -68,9 +73,16 @@ export default function Main() {
             </AppBar>
             <main className={classes.content}>
                 <div className={classes.appBarSpacer}/>
-                <Container maxWidth="xl" className={classes.container}>
-
-                </Container>
+                {Object.keys(data).map((title) => (
+                    <Grid container className={classes.container} justify="center" spacing={4}>
+                        <Grid item xs={12} md={7}>
+                            <SectionHeader>{title}</SectionHeader>
+                        </Grid>
+                        <Grid item xs={12} md={7}>
+                            {menuTitles[title](data[title])}
+                        </Grid>
+                    </Grid>
+                ))}
             </main>
         </div>
     );
