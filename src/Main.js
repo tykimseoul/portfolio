@@ -80,13 +80,13 @@ export default function Main() {
             <main className={classes.content} id={'container'}>
                 <div className={classes.appBarSpacer}/>
                 {Object.keys(data).map((title, index) => {
-                    if (index == 0) {
+                    if (index === 0) {
                         return <Grid container justify="center" spacing={4}>
                             <Grid item xs={11} md={7} id={title}>
                                 {menuTitles[title](data[title])}
                             </Grid>
                         </Grid>
-                    } else if (index == Object.keys(data).length - 1) {
+                    } else if (index === Object.keys(data).length - 1) {
                         let triangleHeight = 6
                         return <Grid container className={classes.contactsBackground} justify="center" spacing={0}>
                             <Grid item xs={12}>

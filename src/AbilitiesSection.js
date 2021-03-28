@@ -29,8 +29,7 @@ export default function AbilitiesSection(data) {
     Object.keys(data).map((title) => {
         let splitIndex = Math.ceil(data[title].length / 2)
         let sorted = data[title].sort((a, b) => a['rating'] < b['rating'] ? 1 : -1)
-        let splitList = [sorted.slice(0, splitIndex), sorted.slice(splitIndex)]
-        columns[title] = splitList
+        columns[title] = [sorted.slice(0, splitIndex), sorted.slice(splitIndex)]
     })
 
     return <React.Fragment>

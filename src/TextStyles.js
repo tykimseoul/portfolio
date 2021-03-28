@@ -87,18 +87,20 @@ export function ContentSubtitle(props) {
 }
 
 export function DateRangeText(props) {
+    let endDate;
+    let range;
     const classes = useStyles();
 
     let startDate = moment(props.start['year'].toString() + props.start['month'].toString().padStart(2, 0), 'YYYYMM').format('MMM. YYYY')
     if (props.end === undefined) {
-        var range = startDate
+        range = startDate;
     } else {
         if (props.end['year'] === -1) {
-            var endDate = 'Today'
+            endDate = 'Today';
         } else {
-            var endDate = moment(props.end['year'].toString() + props.end['month'].toString().padStart(2, 0), 'YYYYMM').format('MMM. YYYY')
+            endDate = moment(props.end['year'].toString() + props.end['month'].toString().padStart(2, 0), 'YYYYMM').format('MMM. YYYY');
         }
-        var range = `${startDate} - ${endDate}`
+        range = `${startDate} - ${endDate}`;
     }
 
     return <React.Fragment>
