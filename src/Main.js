@@ -77,12 +77,12 @@ export default function Main() {
                     ))}
                 </Toolbar>
             </AppBar>
-            <main className={classes.content}>
+            <main className={classes.content} id={'container'}>
                 <div className={classes.appBarSpacer}/>
                 {Object.keys(data).map((title, index) => {
                     if (index == 0) {
                         return <Grid container justify="center" spacing={4}>
-                            <Grid item xs={11} md={7}>
+                            <Grid item xs={11} md={7} id={title}>
                                 {menuTitles[title](data[title])}
                             </Grid>
                         </Grid>
@@ -97,7 +97,7 @@ export default function Main() {
                                     />
                                 </svg>
                             </Grid>
-                            <Grid item xs={12} md={7}>
+                            <Grid item xs={12} md={7} id={title}>
                                 <SectionHeader invert={true}>{title}</SectionHeader>
                             </Grid>
                             <Grid item xs={12} md={7}>
@@ -106,7 +106,7 @@ export default function Main() {
                         </Grid>
                     } else {
                         return <Grid container justify="center" spacing={4}>
-                            <Grid item xs={12} md={7}>
+                            <Grid item xs={12} md={7} id={title}>
                                 <SectionHeader>{title}</SectionHeader>
                             </Grid>
                             <Grid item xs={11} md={7}>
