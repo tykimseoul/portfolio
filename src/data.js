@@ -1,5 +1,8 @@
 export const data = {
-    'about': {},
+    'about': {
+        'greetings':'Hello, there!\nWelcome to my portfolio!',
+        'bio':'I\'m Taeyoon, a Master\'s student in Computer Science at KAIST. I have passion for data science, deep learning and UI/UX design.'
+    },
     'experiences': {
         'education': [
             {
