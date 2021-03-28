@@ -24,7 +24,8 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: 8,
         marginRight:8,
         marginTop: 40,
-        marginBottom:40
+        marginBottom:40,
+        backgroundColor:Colors.white
     },
     icon: {
         color: Colors.primary,
