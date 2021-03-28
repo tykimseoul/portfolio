@@ -10,7 +10,8 @@ const useStyles = makeStyles((theme) => ({
     sectionHeader: {
         color: Colors.textPrimary,
         textTransform: 'uppercase',
-        fontFamily: 'Montserrat-Medium',
+        fontFamily: `'Montserrat', sans-serif`,
+        fontWeight: 500,
         fontSize: '1.2rem',
         display: 'flex',
         alignItems: 'center',
@@ -22,21 +23,24 @@ const useStyles = makeStyles((theme) => ({
     sectionSubheader: {
         color: Colors.textPrimary,
         textTransform: 'capitalize',
-        fontFamily: 'Montserrat-Bold',
+        fontFamily: `'Montserrat', sans-serif`,
+        fontWeight: 700,
         fontSize: '1.1rem',
         paddingTop: 16
     },
     contentTitle: {
         color: Colors.textPrimary,
         textTransform: 'none',
-        fontFamily: 'Montserrat-Medium',
+        fontFamily: `'Montserrat', sans-serif`,
+        fontWeight: 500,
         fontSize: '1.1rem',
         paddingBottom: 8
     },
     contentSubtitle: {
         color: Colors.textPrimary,
         textTransform: 'none',
-        fontFamily: 'Montserrat-Regular',
+        fontFamily: `'Montserrat', sans-serif`,
+        fontWeight: 400,
         fontSize: '1rem',
     },
     row: {

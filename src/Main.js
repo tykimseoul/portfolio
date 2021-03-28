@@ -36,7 +36,8 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         color: Colors.textPrimary,
         textTransform: 'uppercase',
-        fontFamily: 'Montserrat-Bold',
+        fontFamily: `'Montserrat', sans-serif`,
+        fontWeight: 700,
         fontSize: '1.1rem'
     },
     appBarSpacer: theme.mixins.toolbar,

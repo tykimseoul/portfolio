@@ -27,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
     message: {
         color: Colors.textPrimary,
         textTransform: 'none',
-        fontFamily: 'Montserrat-Medium',
+        fontFamily: `'Montserrat', sans-serif`,
+        fontWeight: 500,
         fontSize: '1.4rem',
         marginTop: 56,
         whiteSpace: 'pre-line'
@@ -38,14 +39,14 @@ const useStyles = makeStyles((theme) => ({
     },
     fab: {
         marginTop: 56,
-        marginBottom:80,
-        paddingLeft:24,
-        paddingRight:24,
-        backgroundColor:Colors.white,
+        marginBottom: 80,
+        paddingLeft: 24,
+        paddingRight: 24,
+        backgroundColor: Colors.white,
         "&:hover": {
             backgroundColor: Colors.hoverWhite
         },
-        "& .MuiTouchRipple-root span":{
+        "& .MuiTouchRipple-root span": {
             backgroundColor: Colors.primaryLight,
         },
     },
@@ -54,10 +55,11 @@ const useStyles = makeStyles((theme) => ({
         color: Colors.primary,
         fontSize: 20,
     },
-    cv:{
+    cv: {
         color: Colors.primary,
         textTransform: 'none',
-        fontFamily: 'Montserrat-Medium',
+        fontFamily: `'Montserrat', sans-serif`,
+        fontWeight: 500,
         fontSize: '1rem',
     }
 }))
@@ -82,7 +84,7 @@ export default function AboutSection(data) {
                     size="large"
                     className={classes.fab}>
                     <DescriptionOutlinedIcon className={classes.icon}/>
-                    <Typography className={classes.cv} >CurriculumVitae</Typography>
+                    <Typography className={classes.cv}>CurriculumVitae</Typography>
                 </Fab>
             </Grid>
 

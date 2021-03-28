@@ -22,10 +22,10 @@ const useStyles = makeStyles((theme) => ({
     },
     fab: {
         marginLeft: 8,
-        marginRight:8,
+        marginRight: 8,
         marginTop: 40,
-        marginBottom:40,
-        backgroundColor:Colors.white
+        marginBottom: 40,
+        backgroundColor: Colors.white
     },
     icon: {
         color: Colors.primary,
@@ -33,7 +33,8 @@ const useStyles = makeStyles((theme) => ({
     message: {
         color: Colors.white,
         textTransform: 'none',
-        fontFamily: 'Montserrat-Medium',
+        fontFamily: `'Montserrat', sans-serif`,
+        fontWeight: 500,
         fontSize: '1.1rem',
         marginTop: 16
     },
