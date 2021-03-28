@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        marginTop:24
     },
     invertedSectionHeader: {
         color: Colors.white
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: `'Montserrat', sans-serif`,
         fontWeight: 700,
         fontSize: '1.1rem',
-        paddingTop: 16
+        marginTop: 8
     },
     contentTitle: {
         color: Colors.textPrimary,

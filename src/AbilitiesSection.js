@@ -1,12 +1,12 @@
 import React from "react";
 import Grid from '@material-ui/core/Grid';
-import {List, ListItem} from "@material-ui/core";
 import {ContentTitle, SectionSubheader} from './TextStyles'
-import {makeStyles} from "@material-ui/core/styles";
+import {makeStyles, useTheme} from "@material-ui/core/styles";
 import Rating from '@material-ui/lab/Rating';
 import StarRoundedIcon from '@material-ui/icons/StarRounded';
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import {Colors} from './values/colors.js'
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -24,6 +24,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AbilitiesSection(data) {
     const classes = useStyles();
+    const theme = useTheme();
+    const smDown = useMediaQuery(theme.breakpoints.down('sm'));
 
     let columns = {}
     Object.keys(data).map((title) => {
@@ -33,34 +35,28 @@ export default function AbilitiesSection(data) {
     })
 
     return <React.Fragment>
-        {Object.keys(columns).map((title) => {
-            console.log(columns[title])
-            return <Grid container spacing={0}>
+        {Object.keys(columns).map((title) => (
+            <Grid container spacing={smDown ? 0 : 2}>
                 <Grid item xs={12}>
                     <SectionSubheader>{title}</SectionSubheader>
                 </Grid>
-                {columns[title].map(cols => (
+                {columns[title].map(col => (
                     <Grid item xs={12} md={6} spacing={0}>
-                        <List>
-                            {cols.map((item) => (
-                                <ListItem className={classes.item}>
-                                    <Grid item container xs={12} spacing={4} justify="space-between">
-                                        <Grid item>
-                                            <ContentTitle>
-                                                {item['title'].toString()}
-                                            </ContentTitle>
-                                        </Grid>
-                                        <Grid item>
-                                            <Rating icon={<StarRoundedIcon className={classes.star}/>} emptyIcon={<StarOutlineRoundedIcon className={classes.star}/>} value={item['rating']} readOnly/>
-                                        </Grid>
-                                    </Grid>
-                                </ListItem>
-                            ))}
-                        </List>
+                        {col.map((item) => (
+                            <Grid container justify="space-between" alignItems={'center'} className={classes.item}>
+                                <Grid item>
+                                    <ContentTitle>
+                                        {item['title'].toString()}
+                                    </ContentTitle>
+                                </Grid>
+                                <Grid item>
+                                    <Rating icon={<StarRoundedIcon className={classes.star}/>} emptyIcon={<StarOutlineRoundedIcon className={classes.star}/>} value={item['rating']} readOnly/>
+                                </Grid>
+                            </Grid>
+                        ))}
                     </Grid>
                 ))}
-
             </Grid>
-        })}
+        ))}
     </React.Fragment>
 }

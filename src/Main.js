@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-var menuTitles = {'about': AboutSection, 'experiences': ExperiencesSection, 'extracurriculars': ExtracurricularsSection, 'abilities': AbilitiesSection, 'contacts': ContactsSection}
+let menuTitles = {'about': AboutSection, 'experiences': ExperiencesSection, 'extracurriculars': ExtracurricularsSection, 'abilities': AbilitiesSection, 'contacts': ContactsSection};
 
 export default function Main() {
     const classes = useStyles();
@@ -66,7 +66,7 @@ export default function Main() {
     return (
         <div className={classes.root}>
             <CssBaseline/>
-            <AppBar position="absolute" className={classes.appBar}>
+            <AppBar position="fixed" className={classes.appBar}>
                 <Toolbar className={classes.toolbar}>
                     <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
                         Taeyoon Kim
@@ -82,13 +82,13 @@ export default function Main() {
                 <div className={classes.appBarSpacer}/>
                 {Object.keys(data).map((title, index) => {
                     if (index === 0) {
-                        return <Grid container justify="center" spacing={4}>
+                        return <Grid container justify="center">
                             <Grid item xs={11} md={7} id={title}>
                                 {menuTitles[title](data[title])}
                             </Grid>
                         </Grid>
                     } else if (index === Object.keys(data).length - 1) {
-                        let triangleHeight = 6
+                        let triangleHeight = 7
                         return <Grid container className={classes.contactsBackground} justify="center" spacing={0}>
                             <Grid item xs={12}>
                                 <svg preserveAspectRatio="xMaxYMid" viewBox={`0 0 100 ${triangleHeight * 1.3}`}>

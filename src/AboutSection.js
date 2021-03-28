@@ -75,7 +75,7 @@ export default function AboutSection(data) {
             <Grid item xs={12} className={classes.center}>
                 <Typography className={classes.message} align={'center'}>{data['greetings']}</Typography>
             </Grid>
-            <Grid item xs={11} md={6} className={classes.center}>
+            <Grid item xs={8} md={6} className={classes.center}>
                 <Typography className={`${classes.message} ${classes.bio}`} align={'center'}>{data['bio']}</Typography>
             </Grid>
             <Grid item xs={12} className={classes.center}>
