@@ -1,12 +1,21 @@
 export const data = {
     'about': {
-        'greetings':'Hello, there!\nWelcome to my portfolio!',
-        'bio':'I\'m Taeyoon, a Master\'s student in Computer Science at KAIST. I have passion for data science, deep learning and UI/UX design.'
+        'greetings': {
+            'en': 'Hello, there!\nWelcome to my portfolio!',
+            'kr': '안녕하세요,\n제 포트폴리오에 방문하신 것을 환영합니다.'
+        },
+        'bio': {
+            'en': 'I\'m Taeyoon, a Master\'s student in Computer Science at KAIST. I have passion for data science, deep learning and UI/UX design.',
+            'kr': '저는 KAIST 전산학부 석사 과정에 재학중인 김태윤니다. 데이터 사이언스, 딥러닝, UI/UX 디자인에 관심이 많습니다.'
+        }
     },
     'experiences': {
         'education': [
             {
-                'title': 'School of Computing, KAIST',
+                'title': {
+                    'en': 'School of Computing, KAIST',
+                    'kr': 'KAIST 전산학부'
+                },
                 'startDate': {
                     'year': 2021,
                     'month': 3
@@ -15,12 +24,24 @@ export const data = {
                     'year': -1,
                     'month': -1
                 },
-                'location': 'Daejeon, Korea',
-                'subtitle': 'Master\'s Program - Data Mining Lab',
-                'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                'location': {
+                    'en': 'Daejeon, Korea',
+                    'kr': '대전광역시'
+                },
+                'subtitle': {
+                    'en': 'Master\'s Program - Data Mining Lab',
+                    'kr': '석사 과정 - 데이터 마이닝 연구실'
+                },
+                'description': {
+                    'en': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    'kr': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                }
             },
             {
-                'title': 'School of Computing, KAIST',
+                'title': {
+                    'en': 'School of Computing, KAIST',
+                    'kr': 'KAIST 전산학부'
+                },
                 'startDate': {
                     'year': 2015,
                     'month': 9
@@ -29,12 +50,24 @@ export const data = {
                     'year': 2020,
                     'month': 8
                 },
-                'location': 'Daejeon, Korea',
-                'subtitle': 'Bachelor\'s Degree - Computer Science',
-                'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                'location': {
+                    'en': 'Daejeon, Korea',
+                    'kr': '대전광역시'
+                },
+                'subtitle': {
+                    'en': 'Bachelor\'s Degree - Computer Science',
+                    'kr': '학사 학위 이수'
+                },
+                'description': {
+                    'en': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    'kr': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                }
             },
             {
-                'title': 'Pioneer High School',
+                'title': {
+                    'en': 'Pioneer High School',
+                    'kr': 'Pioneer High School'
+                },
                 'startDate': {
                     'year': 2011,
                     'month': 9
@@ -43,14 +76,26 @@ export const data = {
                     'year': 2015,
                     'month': 6
                 },
-                'location': 'Ann Arbor, MI, USA',
-                'subtitle': 'High School',
-                'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                'location': {
+                    'en': 'Ann Arbor, MI, USA',
+                    'kr': '미국 미시간 주'
+                },
+                'subtitle': {
+                    'en': 'High School',
+                    'kr': '고등학교 과정'
+                },
+                'description': {
+                    'en': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    'kr': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                }
             }
         ],
-        'careers':[
+        'careers': [
             {
-                'title': 'Grinder Corp.',
+                'title': {
+                    'en': 'Grinder Corp.',
+                    'kr': '(주) 그라인더'
+                },
                 'startDate': {
                     'year': 2019,
                     'month': 9
@@ -59,12 +104,24 @@ export const data = {
                     'year': 2021,
                     'month': 2
                 },
-                'location': 'Daejeon, Korea',
-                'subtitle': 'Co-founder, Software Developer',
-                'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                'location': {
+                    'en': 'Daejeon, Korea',
+                    'kr': '대전광역시'
+                },
+                'subtitle': {
+                    'en': 'Co-founder, Software Developer',
+                    'kr': '공동창업, 소프트웨어 개발'
+                },
+                'description': {
+                    'en': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    'kr': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                }
             },
             {
-                'title': 'NAVER Corp',
+                'title': {
+                    'en': 'NAVER Corp',
+                    'kr': '(주) 네이버 웹툰'
+                },
                 'startDate': {
                     'year': 2018,
                     'month': 6
@@ -73,94 +130,149 @@ export const data = {
                     'year': 2018,
                     'month': 12
                 },
-                'location': 'Sungnam, Korea',
-                'subtitle': 'Intern, Software Development',
-                'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                'location': {
+                    'en': 'Daejeon, Korea',
+                    'kr': '경기도 성남시'
+                },
+                'subtitle': {
+                    'en': 'Intern, Software Development',
+                    'kr': '소프트웨어 개발 인턴'
+                },
+                'description': {
+                    'en': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    'kr': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                }
             }
         ]
     },
     'extracurriculars': {
-        'certificates':[
+        'certificates': [
             {
-                'title':'SW University Joint Open Source Hackathon',
-                'startDate':{
-                    'year':2019,
-                    'month':6
+                'title': {
+                    'en': 'SW University Joint Open Source Hackathon',
+                    'kr': '2019 SW 중심대학 공동 오픈소스 해커톤 대회'
                 },
-                'subtitle':'SW University Council Chair Award'
+                'startDate': {
+                    'year': 2019,
+                    'month': 6
+                },
+                'subtitle': {
+                    'en': 'SW University Council Chair Award',
+                    'kr': '소프트웨어중심대학협의회장상'
+                }
             },
             {
-                'title':'LINE Corp. Scholarship',
-                'startDate':{
-                    'year':2019,
-                    'month':11
+                'title': {
+                    'en': 'LINE Corp. Scholarship',
+                    'kr': 'LINE 장학 프로그램'
                 },
-                'subtitle':'LINE Corp. Scholarship'
+                'startDate': {
+                    'year': 2019,
+                    'month': 11
+                },
+                'subtitle': {
+                    'en': 'LINE Corp. Scholarship',
+                    'kr': 'LINE 장학생'
+                }
             },
             {
-                'title':'2019 Ningbo Open Source Space CN-KR Hackathon',
-                'startDate':{
-                    'year':2019,
-                    'month':8
+                'title': {
+                    'en': '2019 Ningbo Open Source Space CN-KR Hackathon',
+                    'kr': '2019 글로벌 SW 공동 해커톤'
                 },
-                'subtitle':'Excellence Award'
+                'startDate': {
+                    'year': 2019,
+                    'month': 8
+                },
+                'subtitle': {
+                    'en': 'Excellence Award',
+                    'kr': '우수상'
+                }
             },
             {
-                'title':'2019 E*5 KAIST',
-                'startDate':{
-                    'year':2019,
-                    'month':12
+                'title': {
+                    'en': '2019 E*5 KAIST',
+                    'kr': '2019 E*5 KAIST'
                 },
-                'subtitle':'Excellence Award'
+                'startDate': {
+                    'year': 2019,
+                    'month': 12
+                },
+                'subtitle': {
+                    'en': 'Excellence Award',
+                    'kr': '우수상'
+                }
             },
             {
-                'title':'Korean Patent Application',
-                'startDate':{
-                    'year':2018,
-                    'month':2
+                'title': {
+                    'en': 'Korean Patent Application',
+                    'kr': '공개 특허 출원'
                 },
-                'subtitle':'Publication Number 10-2019-0093418'
+                'startDate': {
+                    'year': 2018,
+                    'month': 2
+                },
+                'subtitle': {
+                    'en': 'Publication Number 10-2019-0093418',
+                    'kr': '공개번호 10-2019-0093418'
+                }
             },
         ],
-        'projects':[
-
-        ],
-        'activities':[
+        'projects': [],
+        'activities': [
             {
-                'title':'2018 Pyeongchang Winter Olympic Games',
-                'startDate':{
-                    'year':2018,
-                    'month':1
+                'title': {
+                    'en': '2018 Pyeongchang Winter Olympic Games',
+                    'kr': '2018 평창 동계올림픽 대회'
                 },
-                'endDate':{
-                    'year':2018,
-                    'month':2
+                'startDate': {
+                    'year': 2018,
+                    'month': 1
                 },
-                'subtitle':'Olympic Family Assistant'
+                'endDate': {
+                    'year': 2018,
+                    'month': 2
+                },
+                'subtitle': {
+                    'en': 'Olympic Family Assistant',
+                    'kr': 'Olympic Family 의전 자원봉사'
+                }
             },
             {
-                'title':'School of Computing Student Council',
-                'startDate':{
-                    'year':2017,
-                    'month':3
+                'title': {
+                    'en': 'School of Computing Student Council',
+                    'kr': '전산학부 학생회'
                 },
-                'endDate':{
-                    'year':2018,
-                    'month':6
+                'startDate': {
+                    'year': 2017,
+                    'month': 3
                 },
-                'subtitle':'Design Team Lead'
+                'endDate': {
+                    'year': 2018,
+                    'month': 6
+                },
+                'subtitle': {
+                    'en': 'Design Team Lead',
+                    'kr': '디자인팀장'
+                }
             },
             {
-                'title':'TEDxKAIST',
-                'startDate':{
-                    'year':2016,
-                    'month':3
+                'title': {
+                    'en': 'TEDxKAIST',
+                    'kr': 'TEDxKAIST'
                 },
-                'endDate':{
-                    'year':2018,
-                    'month':8
+                'startDate': {
+                    'year': 2016,
+                    'month': 3
                 },
-                'subtitle':'Director'
+                'endDate': {
+                    'year': 2018,
+                    'month': 8
+                },
+                'subtitle': {
+                    'en': 'Director',
+                    'kr': '디렉터(회장)'
+                }
             },
         ]
     },
@@ -193,7 +305,10 @@ export const data = {
         ]
     },
     'contacts': {
-        'message': 'Have a question or want to get in touch?',
+        'message': {
+            'en': 'Have a question or want to get in touch?',
+            'kr': '아래 경로로 연락해주시면 감사하겠습니다.'
+        },
         'routes': {
             'email': 'tykimseoul@gmail.com',
             'github': 'github.com/tykimseoul',

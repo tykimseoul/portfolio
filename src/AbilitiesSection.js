@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-export default function AbilitiesSection(data) {
+export default function AbilitiesSection(data, language) {
     const classes = useStyles();
     const theme = useTheme();
     const smDown = useMediaQuery(theme.breakpoints.down('sm'));
@@ -46,7 +46,7 @@ export default function AbilitiesSection(data) {
                             <Grid container justify="space-between" alignItems={'center'} className={classes.item}>
                                 <Grid item>
                                     <ContentTitle>
-                                        {item['title'].toString()}
+                                        {item['title']}
                                     </ContentTitle>
                                 </Grid>
                                 <Grid item>

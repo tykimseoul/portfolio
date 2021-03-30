@@ -1,9 +1,11 @@
-import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import React, {useState} from 'react';
+import {makeStyles, withStyles} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
+import ToggleButton from '@material-ui/lab/ToggleButton';
 import {Colors} from './values/colors.js'
 import MenuItem from './MenuItem'
 import AboutSection from './AboutSection'
@@ -55,13 +57,56 @@ const useStyles = makeStyles((theme) => ({
     },
     contactsBackground: {
         backgroundColor: Colors.primary
+    },
+    languageButton: {
+        fontFamily: `'Montserrat', sans-serif`,
+        fontWeight: 500,
+        fontSize: '1rem'
+    },
+    languageButtonGroup: {
+        marginLeft: theme.spacing(2),
     }
 }));
+
+const LanguageButtonGroup = withStyles((theme) => ({
+    grouped: {
+        padding: 4,
+        border: 'none',
+        backgroundColor: 'transparent',
+        '&:not(:first-child)': {
+            borderRadius: theme.shape.borderRadius,
+        },
+        '&:first-child': {
+            borderRadius: theme.shape.borderRadius,
+        },
+        '&.Mui-selected': {
+            color: Colors.primary,
+            backgroundColor: 'transparent',
+            "&:hover": {
+                backgroundColor: Colors.hoverWhite
+            },
+            '& .MuiTypography-root': {
+                fontWeight: 700,
+            }
+        },
+        "&:hover": {
+            backgroundColor: Colors.hoverWhite
+        },
+    },
+}))(ToggleButtonGroup);
 
 let menuTitles = {'about': AboutSection, 'experiences': ExperiencesSection, 'extracurriculars': ExtracurricularsSection, 'abilities': AbilitiesSection, 'contacts': ContactsSection};
 
 export default function Main() {
     const classes = useStyles();
+
+    const [language, setLanguage] = useState('en')
+
+    const handleLanguage = (event, newLanguage) => {
+        if (newLanguage !== null) {
+            setLanguage(newLanguage);
+        }
+    };
 
     return (
         <div className={classes.root}>
@@ -76,18 +121,26 @@ export default function Main() {
                             {title}
                         </MenuItem>
                     ))}
+                    <LanguageButtonGroup size="small" value={language} exclusive onChange={handleLanguage} aria-label="text alignment" className={classes.languageButtonGroup}>
+                        <ToggleButton value="kr" aria-label="left aligned">
+                            <Typography className={classes.languageButton}>KR</Typography>
+                        </ToggleButton>
+                        <ToggleButton value="en" aria-label="right aligned">
+                            <Typography className={classes.languageButton}>EN</Typography>
+                        </ToggleButton>
+                    </LanguageButtonGroup>
                 </Toolbar>
             </AppBar>
             <main className={classes.content} id={'container'}>
                 <div className={classes.appBarSpacer}/>
-                {Object.keys(data).map((title, index) => {
+                {Object.keys(menuTitles).map((title, index) => {
                     if (index === 0) {
                         return <Grid container justify="center">
                             <Grid item xs={11} md={7} id={title}>
-                                {menuTitles[title](data[title])}
+                                {menuTitles[title](data[title], language)}
                             </Grid>
                         </Grid>
-                    } else if (index === Object.keys(data).length - 1) {
+                    } else if (title === 'contacts') {
                         let triangleHeight = 7
                         return <Grid container className={classes.contactsBackground} justify="center" spacing={0}>
                             <Grid item xs={12}>
@@ -102,7 +155,7 @@ export default function Main() {
                                 <SectionHeader invert={true}>{title}</SectionHeader>
                             </Grid>
                             <Grid item xs={12} md={7}>
-                                {menuTitles[title](data[title])}
+                                {menuTitles[title](data[title], language)}
                             </Grid>
                         </Grid>
                     } else {
@@ -111,7 +164,7 @@ export default function Main() {
                                 <SectionHeader>{title}</SectionHeader>
                             </Grid>
                             <Grid item xs={11} md={7}>
-                                {menuTitles[title](data[title])}
+                                {menuTitles[title](data[title], language)}
                             </Grid>
                         </Grid>
                     }

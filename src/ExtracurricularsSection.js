@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-export default function ExtracurricularsSection(data) {
+export default function ExtracurricularsSection(data, language) {
     const classes = useStyles();
 
     return <React.Fragment>
@@ -27,7 +27,7 @@ export default function ExtracurricularsSection(data) {
                             <Grid item xs={6}>
                                 <Grid item xs={12}>
                                     <ContentTitle>
-                                        {item['title'].toString()}
+                                        {item['title'][language]}
                                     </ContentTitle>
                                 </Grid>
                                 <Grid item xs={12}>
@@ -37,7 +37,7 @@ export default function ExtracurricularsSection(data) {
                             <Grid item xs={6}>
                                 <Grid item xs={12}>
                                     <ContentTitle>
-                                        {item['subtitle'].toString()}
+                                        {item['subtitle'][language]}
                                     </ContentTitle>
                                 </Grid>
                             </Grid>

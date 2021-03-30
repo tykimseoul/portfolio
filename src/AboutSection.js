@@ -91,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-export default function AboutSection(data) {
+export default function AboutSection(data, language) {
     const classes = useStyles();
 
     return <React.Fragment>
@@ -100,10 +100,10 @@ export default function AboutSection(data) {
                 <img src={profile} className={classes.circular} alt={'profile'}/>
             </Grid>
             <Grid item xs={12} className={classes.center}>
-                <Typography className={classes.message} align={'center'}>{data['greetings']}</Typography>
+                <Typography className={classes.message} align={'center'}>{data['greetings'][language]}</Typography>
             </Grid>
             <Grid item xs={9} md={6} className={classes.center}>
-                <Typography className={`${classes.message} ${classes.bio}`} align={'center'}>{data['bio']}</Typography>
+                <Typography className={`${classes.message} ${classes.bio}`} align={'center'}>{data['bio'][language]}</Typography>
             </Grid>
             <Grid item xs={12} className={classes.center}>
                 <Fab

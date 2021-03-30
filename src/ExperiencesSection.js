@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-export default function ExperiencesSection(data) {
+export default function ExperiencesSection(data, language) {
     const classes = useStyles();
 
     return <React.Fragment>
@@ -28,25 +28,25 @@ export default function ExperiencesSection(data) {
                             <Grid item xs={6} md={5}>
                                 <Grid item xs={12}>
                                     <ContentTitle>
-                                        {item['title'].toString()}
+                                        {item['title'][language]}
                                     </ContentTitle>
                                 </Grid>
                                 <Grid item xs={12}>
                                     <DateRangeText start={item['startDate']} end={item['endDate']}/>
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <LocationText location={item['location']}/>
+                                    <LocationText location={item['location'][language]}/>
                                 </Grid>
                             </Grid>
                             <Grid item xs={6} md={7}>
                                 <Grid item xs={12}>
                                     <ContentTitle>
-                                        {item['subtitle'].toString()}
+                                        {item['subtitle'][language]}
                                     </ContentTitle>
                                 </Grid>
                                 <Grid item xs={12}>
                                     <ContentSubtitle>
-                                        {item['description'].toString()}
+                                        {item['description'][language]}
                                     </ContentSubtitle>
                                 </Grid>
                             </Grid>

@@ -63,7 +63,7 @@ function LinkedinIcon() {
     );
 }
 
-export default function ContactsSection(data) {
+export default function ContactsSection(data, language) {
     const classes = useStyles();
 
     let iconMapping = {
@@ -77,7 +77,7 @@ export default function ContactsSection(data) {
     return <React.Fragment>
         <Grid container>
             <Grid item xs={12}>
-                <Typography className={`${classes.message} ${classes.center}`}>{data['message']}</Typography>
+                <Typography className={`${classes.message} ${classes.center}`}>{data['message'][language]}</Typography>
             </Grid>
             <Grid item xs={12} className={classes.center}>
                 {Object.keys(data['routes']).map((title) => (
