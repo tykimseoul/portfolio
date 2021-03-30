@@ -16,7 +16,7 @@ export const data = {
                     'month': -1
                 },
                 'location': 'Daejeon, Korea',
-                'subtitle': 'Master\'s Program - Computer Science',
+                'subtitle': 'Master\'s Program - Data Mining Lab',
                 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
             },
             {
@@ -82,12 +82,12 @@ export const data = {
     'extracurriculars': {
         'certificates':[
             {
-                'title':'SW 중심대학 공동 오픈소스 해커톤 대회',
+                'title':'SW University Joint Open Source Hackathon',
                 'startDate':{
                     'year':2019,
                     'month':6
                 },
-                'subtitle':'소프트웨어중심대학협의회장상'
+                'subtitle':'SW University Council Chair Award'
             },
             {
                 'title':'LINE Corp. Scholarship',

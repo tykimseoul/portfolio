@@ -10,14 +10,21 @@ import DescriptionOutlinedIcon from '@material-ui/icons/DescriptionOutlined';
 const useStyles = makeStyles((theme) => ({
     circular: {
         borderRadius: "50%",
-        width: 296,
-        height: 296,
         objectFit: 'cover',
         objectPosition: 'top',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 88
+        [theme.breakpoints.down('sm')]: {
+            marginTop: 56,
+            width: 248,
+            height: 248,
+        },
+        [theme.breakpoints.up('md')]: {
+            marginTop: 88,
+            width: 296,
+            height: 296,
+        },
     },
     center: {
         display: 'flex',
@@ -29,12 +36,22 @@ const useStyles = makeStyles((theme) => ({
         textTransform: 'none',
         fontFamily: `'Montserrat', sans-serif`,
         fontWeight: 500,
-        fontSize: '1.4rem',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '1.2rem',
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: '1.4rem',
+        },
         marginTop: 56,
         whiteSpace: 'pre-line'
     },
     bio: {
-        fontSize: '1.2rem',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '1rem',
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: '1.2rem',
+        },
         marginTop: 24,
     },
     fab: {
@@ -53,14 +70,24 @@ const useStyles = makeStyles((theme) => ({
     icon: {
         marginRight: 4,
         color: Colors.primary,
-        fontSize: 20,
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 18,
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: 20,
+        },
     },
     cv: {
         color: Colors.primary,
         textTransform: 'none',
         fontFamily: `'Montserrat', sans-serif`,
         fontWeight: 500,
-        fontSize: '1rem',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '0.9rem',
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: '1rem',
+        },
     }
 }))
 
@@ -75,7 +102,7 @@ export default function AboutSection(data) {
             <Grid item xs={12} className={classes.center}>
                 <Typography className={classes.message} align={'center'}>{data['greetings']}</Typography>
             </Grid>
-            <Grid item xs={8} md={6} className={classes.center}>
+            <Grid item xs={9} md={6} className={classes.center}>
                 <Typography className={`${classes.message} ${classes.bio}`} align={'center'}>{data['bio']}</Typography>
             </Grid>
             <Grid item xs={12} className={classes.center}>

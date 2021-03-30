@@ -12,11 +12,16 @@ const useStyles = makeStyles((theme) => ({
         textTransform: 'uppercase',
         fontFamily: `'Montserrat', sans-serif`,
         fontWeight: 500,
-        fontSize: '1.2rem',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '1.1rem',
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: '1.2rem',
+        },
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop:24
+        marginTop: 24
     },
     invertedSectionHeader: {
         color: Colors.white
@@ -26,15 +31,26 @@ const useStyles = makeStyles((theme) => ({
         textTransform: 'capitalize',
         fontFamily: `'Montserrat', sans-serif`,
         fontWeight: 700,
-        fontSize: '1.1rem',
-        marginTop: 8
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '0.9rem',
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: '1.1rem',
+        },
+        marginTop: 8,
+        marginBottom: 8
     },
     contentTitle: {
         color: Colors.textPrimary,
         textTransform: 'none',
         fontFamily: `'Montserrat', sans-serif`,
         fontWeight: 500,
-        fontSize: '1.1rem',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '0.8rem',
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: '1.1rem',
+        },
         paddingBottom: 8
     },
     contentSubtitle: {
@@ -42,7 +58,12 @@ const useStyles = makeStyles((theme) => ({
         textTransform: 'none',
         fontFamily: `'Montserrat', sans-serif`,
         fontWeight: 400,
-        fontSize: '1rem',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '0.7rem',
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: '1rem',
+        },
     },
     row: {
         width: '100%',
@@ -54,7 +75,12 @@ const useStyles = makeStyles((theme) => ({
     icon: {
         color: Colors.primary,
         marginRight: 8,
-        fontSize: 20,
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 18,
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: 20,
+        },
         marginBottom: 8
     }
 }))

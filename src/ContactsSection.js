@@ -35,7 +35,12 @@ const useStyles = makeStyles((theme) => ({
         textTransform: 'none',
         fontFamily: `'Montserrat', sans-serif`,
         fontWeight: 500,
-        fontSize: '1.1rem',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '0.9rem',
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: '1.1rem',
+        },
         marginTop: 16
     },
 }))

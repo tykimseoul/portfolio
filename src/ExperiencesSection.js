@@ -25,7 +25,7 @@ export default function ExperiencesSection(data) {
                 <Grid item xs={12}>
                     {data[title].map((item) => (
                         <Grid container spacing={2} className={classes.item}>
-                            <Grid item xs={5}>
+                            <Grid item xs={6} md={5}>
                                 <Grid item xs={12}>
                                     <ContentTitle>
                                         {item['title'].toString()}
@@ -38,7 +38,7 @@ export default function ExperiencesSection(data) {
                                     <LocationText location={item['location']}/>
                                 </Grid>
                             </Grid>
-                            <Grid item xs={7}>
+                            <Grid item xs={6} md={7}>
                                 <Grid item xs={12}>
                                     <ContentTitle>
                                         {item['subtitle'].toString()}
