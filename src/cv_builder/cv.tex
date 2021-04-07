@@ -1,0 +1,283 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=2cm, right=2cm, top=1.5cm, bottom=1.5cm,footskip=0.25in]{geometry}
+\usepackage{anyfontsize}
+\usepackage{graphbox}
+\usepackage{tikz}
+\usepackage{forloop}
+\usepackage[tabular,lining]{montserrat}
+\usepackage[T1]{fontenc}
+\definecolor{textPrimary}{HTML}{393939}
+\definecolor{textSecondary}{HTML}{707070}
+\definecolor{primary}{HTML}{2755ba}
+\graphicspath{ {./images/} }
+
+\newcommand*{\montserrat}{\fontfamily{Montserrat-TOsF}\selectfont}
+
+\definecolor{textPrimary}{HTML}{393939}
+\definecolor{textSecondary}{HTML}{707070}
+\definecolor{primary}{HTML}{2755ba}
+
+\graphicspath{ {./images/} }
+
+
+\newcommand*{\titletext}[6]{
+    \noindent
+    \begin{minipage}[c]{0.15\textwidth}
+    \begin{tikzpicture}
+        \clip (0,0) circle (1cm);
+        \node at (0,-0.75) {\includegraphics[width=2cm]{profile.png}};
+    \end{tikzpicture}
+    \end{minipage}
+    \noindent
+    \begin{minipage}[c]{0.55\textwidth}
+    {\montserrat \textcolor{textPrimary}{\uppercase{\textbf{\fontsize{20}{24}\selectfont #1}}}}
+    \vspace{10pt}\\
+    {\montserrat \textcolor{textSecondary}{\textbf{\fontsize{10}{24}\selectfont #2}}}
+    \end{minipage}
+    \hfill
+    %
+    \noindent
+    \begin{minipage}[c]{0.3\textwidth}
+    \begingroup
+    \setlength{\tabcolsep}{3pt}
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{cl}
+    \includegraphics[align=c,width=10px, height=10px]{email.png}
+    &
+    {\montserrat \fontsize{7}{9}\selectfont #3}\\
+    \includegraphics[align=c,width=10px, height=10px]{web.png}
+    &
+    {\montserrat \fontsize{7}{9}\selectfont #4}\\
+    \includegraphics[align=c,width=10px, height=10px]{github.png}
+    &
+    {\montserrat \fontsize{7}{9}\selectfont #5}\\
+    \includegraphics[align=c,width=10px, height=10px]{linkedin.png}
+    &
+    {\montserrat \fontsize{7}{9}\selectfont #6}\\
+    \end{tabular}
+    \endgroup
+    \end{minipage}\\
+}
+
+\newcommand*{\sectionheader}[1]{    
+    \vspace{8pt}
+    {\montserrat \textcolor{textSecondary}{\uppercase{\textbf{\fontsize{11}{13}\selectfont #1}}}}
+    \vspace{4pt}\\
+}
+
+\newcommand*{\itemwithlocation}[4]{
+    \begin{minipage}[t]{0.3\textwidth}
+        {\montserrat \textcolor{primary}{\textbf{\fontsize{8}{10}\selectfont #1}}}
+    \end{minipage}
+    \noindent
+    \begin{minipage}[t]{0.7\textwidth}
+        {\montserrat \textcolor{textSecondary}{\textbf{\fontsize{8}{10}\selectfont #2}}}
+        |
+        \includegraphics[align=c,width=10px, height=10px]{place.png}
+        {\montserrat \textcolor{textSecondary}{\textbf{\fontsize{8}{10}\selectfont #4}}}
+        \\
+        {\montserrat \textcolor{textSecondary}{\textit{\fontsize{8}{10}\selectfont #3}}}
+    \end{minipage}
+    \vspace{2pt}\\
+}
+
+\newcommand*{\itemwithoutlocation}[3]{
+    \begin{minipage}[t]{0.3\textwidth}
+        {\montserrat \textcolor{primary}{\textbf{\fontsize{8}{10}\selectfont #1}}}
+    \end{minipage}
+    \noindent
+    \begin{minipage}[t]{0.7\textwidth}
+        {\montserrat \textcolor{textSecondary}{\textbf{\fontsize{8}{10}\selectfont #2}}}
+        \\
+        {\montserrat \textcolor{textSecondary}{\fontsize{8}{10}\selectfont #3}}
+    \end{minipage}
+    \vspace{2pt}\\
+}
+
+\newcommand*{\itemwithoutrating}[1]{
+    {\montserrat \textcolor{textSecondary}{\textbf{\fontsize{8}{10}\selectfont #1}}}
+    \vspace{2pt}\\
+}
+\begin{document}
+\setlength{\parindent}{0pt}
+\titletext{Taeyoon Kim}%
+{Computer Science Engineer}%
+{tykimseoul@gmail.com}%
+{tykimseoul.github.io}%
+{github.com/tykimseoul}%
+{linkedin.com/in/taeyoon-kim-000}
+
+\begin{minipage}[t]{0.7\textwidth}
+\sectionheader{education}
+    \itemwithlocation{Mar. 2021 - Present}%
+        {School of Computing, KAIST}%
+        {Master's Program - Data Mining Lab}%
+        {Daejeon, Korea}
+    \itemwithlocation{Mar. 2021 - Present}%
+        {School of Computing, KAIST}%
+        {Bachelor's Degree - Computer Science}%
+        {Daejeon, Korea}
+    \itemwithlocation{Mar. 2021 - Present}%
+        {Pioneer High School}%
+        {High School}%
+        {Ann Arbor, MI, USA}
+\sectionheader{careers}
+    \itemwithlocation{Mar. 2021 - Present}%
+        {Grinder Corp.}%
+        {Co-founder, Software Developer}%
+        {Daejeon, Korea}
+    \itemwithlocation{Mar. 2021 - Present}%
+        {NAVER Corp}%
+        {Intern, Software Development}%
+        {Daejeon, Korea}
+\sectionheader{certificates}
+    \itemwithoutlocation{Mar. 2021 - Present}%
+        {SW University Joint Open Source Hackathon}%
+        {SW University Council Chair Award}
+    \itemwithoutlocation{Mar. 2021 - Present}%
+        {LINE Corp. Scholarship}%
+        {LINE Corp. Scholarship}
+    \itemwithoutlocation{Mar. 2021 - Present}%
+        {2019 Ningbo Open Source Space CN-KR Hackathon}%
+        {Excellence Award}
+    \itemwithoutlocation{Mar. 2021 - Present}%
+        {2019 E*5 KAIST}%
+        {Excellence Award}
+    \itemwithoutlocation{Mar. 2021 - Present}%
+        {Korean Patent Application}%
+        {Publication Number 10-2019-0093418}
+\sectionheader{activities}
+    \itemwithoutlocation{Mar. 2021 - Present}%
+        {2018 Pyeongchang Winter Olympic Games}%
+        {Olympic Family Assistant}
+    \itemwithoutlocation{Mar. 2021 - Present}%
+        {School of Computing Student Council}%
+        {Design Team Lead}
+    \itemwithoutlocation{Mar. 2021 - Present}%
+        {TEDxKAIST}%
+        {Director}
+\end{minipage}
+\begin{minipage}[t]{0.3\textwidth}
+\sectionheader{skills}
+\begin{minipage}[c]{0.6\textwidth}
+    {\montserrat \textcolor{textSecondary}{\textbf{\fontsize{8}{10}\selectfont Tensorflow}}}
+\end{minipage}
+\noindent
+\begin{minipage}[c]{0.1\textwidth}
+    \begingroup
+        \setlength{\tabcolsep}{0pt}
+        \renewcommand{\arraystretch}{0.25}
+        \begin{tabular}{ccccc}
+            \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png}
+        \end{tabular}
+    \endgroup
+\end{minipage}
+\vspace{2pt}\\
+
+\begin{minipage}[c]{0.6\textwidth}
+    {\montserrat \textcolor{textSecondary}{\textbf{\fontsize{8}{10}\selectfont Android Development}}}
+\end{minipage}
+\noindent
+\begin{minipage}[c]{0.1\textwidth}
+    \begingroup
+        \setlength{\tabcolsep}{0pt}
+        \renewcommand{\arraystretch}{0.25}
+        \begin{tabular}{ccccc}
+            \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png}
+        \end{tabular}
+    \endgroup
+\end{minipage}
+\vspace{2pt}\\
+
+\begin{minipage}[c]{0.6\textwidth}
+    {\montserrat \textcolor{textSecondary}{\textbf{\fontsize{8}{10}\selectfont Flutter}}}
+\end{minipage}
+\noindent
+\begin{minipage}[c]{0.1\textwidth}
+    \begingroup
+        \setlength{\tabcolsep}{0pt}
+        \renewcommand{\arraystretch}{0.25}
+        \begin{tabular}{ccccc}
+            \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png}
+        \end{tabular}
+    \endgroup
+\end{minipage}
+\vspace{2pt}\\
+
+\begin{minipage}[c]{0.6\textwidth}
+    {\montserrat \textcolor{textSecondary}{\textbf{\fontsize{8}{10}\selectfont iOS Development}}}
+\end{minipage}
+\noindent
+\begin{minipage}[c]{0.1\textwidth}
+    \begingroup
+        \setlength{\tabcolsep}{0pt}
+        \renewcommand{\arraystretch}{0.25}
+        \begin{tabular}{ccccc}
+            \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png}
+        \end{tabular}
+    \endgroup
+\end{minipage}
+\vspace{2pt}\\
+
+\begin{minipage}[c]{0.6\textwidth}
+    {\montserrat \textcolor{textSecondary}{\textbf{\fontsize{8}{10}\selectfont Docker}}}
+\end{minipage}
+\noindent
+\begin{minipage}[c]{0.1\textwidth}
+    \begingroup
+        \setlength{\tabcolsep}{0pt}
+        \renewcommand{\arraystretch}{0.25}
+        \begin{tabular}{ccccc}
+            \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png}
+        \end{tabular}
+    \endgroup
+\end{minipage}
+\vspace{2pt}\\
+
+\begin{minipage}[c]{0.6\textwidth}
+    {\montserrat \textcolor{textSecondary}{\textbf{\fontsize{8}{10}\selectfont Data Science}}}
+\end{minipage}
+\noindent
+\begin{minipage}[c]{0.1\textwidth}
+    \begingroup
+        \setlength{\tabcolsep}{0pt}
+        \renewcommand{\arraystretch}{0.25}
+        \begin{tabular}{ccccc}
+            \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png}
+        \end{tabular}
+    \endgroup
+\end{minipage}
+\vspace{2pt}\\
+
+\begin{minipage}[c]{0.6\textwidth}
+    {\montserrat \textcolor{textSecondary}{\textbf{\fontsize{8}{10}\selectfont UI/UX Design}}}
+\end{minipage}
+\noindent
+\begin{minipage}[c]{0.1\textwidth}
+    \begingroup
+        \setlength{\tabcolsep}{0pt}
+        \renewcommand{\arraystretch}{0.25}
+        \begin{tabular}{ccccc}
+            \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png}
+        \end{tabular}
+    \endgroup
+\end{minipage}
+\vspace{2pt}\\
+
+\begin{minipage}[c]{0.6\textwidth}
+    {\montserrat \textcolor{textSecondary}{\textbf{\fontsize{8}{10}\selectfont React}}}
+\end{minipage}
+\noindent
+\begin{minipage}[c]{0.1\textwidth}
+    \begingroup
+        \setlength{\tabcolsep}{0pt}
+        \renewcommand{\arraystretch}{0.25}
+        \begin{tabular}{ccccc}
+            \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png} & \includegraphics[align=c,width=10px, height=10px]{star_outline.png}
+        \end{tabular}
+    \endgroup
+\end{minipage}
+\vspace{2pt}\\
+
+\end{minipage}\end{document}

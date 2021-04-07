@@ -23,3 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 .idea
 ui design
+src/cv_builder/__pycache__
+src/cv_builder/venv/bin
+src/cv_builder/venv/lib
+cv.log
+cv.aux
