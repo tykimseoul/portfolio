@@ -161,8 +161,8 @@ def item_without_location(data, language):
 def item_with_rating(data):
     title = data['title']
     rating = data['rating']
-    stars = ['\\includegraphics[align=c,width=10px, height=10px]{star.png}', '&'] * rating + ['\\includegraphics[align=c,width=10px, height=10px]{star_outline.png}', '&'] * (5 - rating - 1) + [
-        '\\includegraphics[align=c,width=10px, height=10px]{star_outline.png}']
+    stars = ['\\includegraphics[align=c,width=10px, height=10px]{star.png}', '&'] * rating + ['\\includegraphics[align=c,width=10px, height=10px]{star_outline.png}', '&'] * (5 - rating)
+    stars = stars[:-1]
     print(stars)
     return f'''
 \\begin{{minipage}}[c]{{0.6\\textwidth}}
@@ -178,7 +178,7 @@ def item_with_rating(data):
         \\end{{tabular}}
     \\endgroup
 \\end{{minipage}}
-\\vspace{{2pt}}\\\\
+\\vspace{{0pt}}\\\\
 '''
 
 

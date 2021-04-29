@@ -7,6 +7,10 @@ from components import imports, title, begin_document, end_document, begin_minip
 raw_data = open('../data.js', 'r').read()
 raw_data = re.search(r'({[\s\S]+})', raw_data).groups()[0]
 data = json.loads(raw_data)
+data['abilities']['skills'] = sorted(data['abilities']['skills'], key=lambda j: j['rating'], reverse=True)
+data['abilities']['languages'] = data['abilities']['languages (natural)'] + data['abilities']['languages (programming)']
+data['abilities']['languages'] = sorted(data['abilities']['languages'], key=lambda j: j['rating'], reverse=True)
+data['abilities']['languages'] = list(filter(lambda j: j['rating'] > 2, data['abilities']['languages']))
 
 item_type_1 = {'education': item_with_location, 'careers': item_with_location, 'certificates': item_without_location, 'activities': item_without_location}
 item_type_2 = {'skills': item_with_rating, 'languages': item_with_rating, 'interests': item_without_rating}
