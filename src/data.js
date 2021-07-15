@@ -281,18 +281,20 @@ export const data = {
             {"title": "Tensorflow", "rating": 3},
             {"title": "Android Development", "rating": 4},
             {"title": "Flutter", "rating": 2},
-            {"title": "iOS Development", "rating": 2},
+            {"title": "iOS Development", "rating": 3},
             {"title": "Docker", "rating": 2},
             {"title": "Data Science", "rating": 3},
             {"title": "UI/UX Design", "rating": 3},
-            {"title": "React", "rating": 2}
+            {"title": "React", "rating": 2},
+            {"title": "React Native", "rating": 2}
         ],
         "languages (programming)": [
             {"title": "Python", "rating": 4},
-            {"title": "Java", "rating": 4},
+            {"title": "Java", "rating": 3},
             {"title": "Kotlin", "rating": 4},
             {"title": "Swift", "rating": 3},
-            {"title": "Javascript", "rating": 2},
+            {"title": "Javascript", "rating": 3},
+            {"title": "Typescript", "rating": 3},
             {"title": "C", "rating": 2},
             {"title": "C++", "rating": 2},
             {"title": "Scala", "rating": 3}

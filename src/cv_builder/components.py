@@ -62,9 +62,9 @@ def imports():
 }
 
 \\newcommand*{\\sectionheader}[1]{    
-    \\vspace{8pt}
+    \\vspace{0pt}
     {\\montserrat \\textcolor{textSecondary}{\\uppercase{\\textbf{\\fontsize{11}{13}\\selectfont #1}}}}
-    \\vspace{4pt}\\\\
+    \\vspace{16pt}\\\\
 }
 
 \\newcommand*{\\itemwithlocation}[4]{
@@ -80,7 +80,7 @@ def imports():
         \\\\
         {\\montserrat \\textcolor{textSecondary}{\\textit{\\fontsize{8}{10}\\selectfont #3}}}
     \\end{minipage}
-    \\vspace{2pt}\\\\
+    \\vspace{8pt}\\\\
 }
 
 \\newcommand*{\\itemwithoutlocation}[3]{
@@ -93,12 +93,12 @@ def imports():
         \\\\
         {\\montserrat \\textcolor{textSecondary}{\\fontsize{8}{10}\\selectfont #3}}
     \\end{minipage}
-    \\vspace{2pt}\\\\
+    \\vspace{8pt}\\\\
 }
 
 \\newcommand*{\\itemwithoutrating}[1]{
     {\\montserrat \\textcolor{textSecondary}{\\textbf{\\fontsize{8}{10}\\selectfont #1}}}
-    \\vspace{2pt}\\\\
+    \\vspace{4pt}\\\\
 }
 '''
 
@@ -178,7 +178,7 @@ def item_with_rating(data):
         \\end{{tabular}}
     \\endgroup
 \\end{{minipage}}
-\\vspace{{0pt}}\\\\
+\\vspace{{4pt}}\\\\
 '''
 
 

@@ -20,6 +20,7 @@ with open(file_name, 'w') as file:
     file.write(imports())
     file.write(begin_document())
     file.write(title())
+    file.write('\\vspace{16pt}\\\\')
 
     file.write(begin_minipage(0.7))
     for header in list(data.keys())[1:]:
